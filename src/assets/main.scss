@@ -1,0 +1,107 @@
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
+
+//colors
+$black: #303030;
+$white: #ffffff;
+$red: #C63654;
+$red1: #D33947;
+$red2: #B9325F;
+
+//global
+@import "reset";
+
+@keyframes spinning {
+  from { transform: rotateZ(0deg) }
+  to { transform: rotateZ(360deg) }
+}
+
+h1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: .5rem 1.5rem .5rem 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom-right-radius: 2rem;
+  background: linear-gradient(45deg, $red2, $red1);
+  color: $white;
+  box-shadow: 4px 6px 10px rgba($black, .2);
+  z-index: 1;
+
+  span {
+    color: inherit;
+    font-size: .75rem;
+    font-weight: normal;
+    font-style: oblique;
+  }
+}
+
+.scanner-zone {
+  position: fixed!important;
+  top: 0;
+  left: 0;
+  height: 100%!important;
+  width: 100%!important;
+}
+
+.validation-pending, .validation-failure, .validation-success {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba($black, .5);
+
+  .scanner-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    padding-left: 1rem;
+    background: white;
+    font-size: .9rem;
+    font-weight: bold;
+    color: #303030;
+    border-radius: 1rem;
+    box-shadow: 4px 6px 10px rgba($black, .2);
+
+    &__loader {
+      display: block;
+      height: 1.5rem;
+      width: 1.5rem;
+      border: 5px solid $red;
+      border-bottom-color: transparent;
+      border-radius: .75rem;
+      animation: 1s infinite spinning;
+    }
+
+    .scanner-text__success {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: .75rem;
+      background-color: #78ae78;
+      color: $white;
+      font-weight: bold;
+    }
+
+    .scanner-text__error {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: .75rem;
+      background-color: $red;
+      color: $white;
+      font-weight: bold;
+    }
+  }
+}
