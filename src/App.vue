@@ -2,7 +2,6 @@
   <main>
     <h1>
       QRCode Scanner
-      <span>/ project-n1870</span>
     </h1>
     <QrStream class="scanner-zone" @decode="onDecode">
       <div class="validation-success" v-if="isLoading">
@@ -81,7 +80,7 @@ async function onDecode(content: any) {
       if (companyValue !== null)
         company = companyValue[1].replace(" ", "+");
     }
-    const url: string = `https://docs.google.com/forms/d/e/1FAIpQLSd4VzAuuHynddXhR3-qKnyiak3ERkwhmJeOfN2K0VoMaVIxzQ/viewform?usp=pp_url&entry.100140466=${name}&entry.1386068958=${email}&entry.1985612851=${company}`;
+    const url: string = `https://docs.google.com/forms/d/e/1FAIpQLSdsoiXxXKk5Cz0XOGiyS0t-z_gFfnCY8y5E2CWGTIJs3R_3Ag/viewform?usp=pp_url&entry.1680839642=${name}&entry.694152335=${email}&entry.1453140703=${company}`;
     window.open(url, "_blank");
 
     result.value = null;
