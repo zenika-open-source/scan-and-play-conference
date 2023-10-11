@@ -2,7 +2,6 @@
   <main>
     <h1>
       QRCode Scanner
-      <span>/ project-n1870</span>
     </h1>
     <QrStream class="scanner-zone" @decode="onDecode">
       <div class="validation-success" v-if="isLoading">
