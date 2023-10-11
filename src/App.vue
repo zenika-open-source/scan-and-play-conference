@@ -55,7 +55,7 @@ async function onDecode(content: any) {
     const internetExtractor = /INTERNET:(.*)/g;
     const companyExtractor = /ORG:(.*)/g;
 
-    let name = "";
+    let name;
     if (nameExtractor.test(content)) {
       nameExtractor.lastIndex = 0;
       name = nameExtractor.exec(content);

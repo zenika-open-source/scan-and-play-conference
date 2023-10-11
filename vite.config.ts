@@ -5,6 +5,9 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: process.env.NODE_ENV === 'production'
+      ? '/scan-and-play-conference/'
+      : '/',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -12,9 +15,3 @@ export default defineConfig({
     }
   }
 })
-
-module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-  ? '/scan-and-play-conference'
-  : '/'
-}
